@@ -1,0 +1,1 @@
+json.extract! @university_info, :id, :address, :fullname, :email, :regdate, :site, :telephone, :worktime, :founder_address, :founder_director, :founder_email, :founder_site, :founder_phone, :founder_name, :infodate, :university_id, :created_at, :updated_at

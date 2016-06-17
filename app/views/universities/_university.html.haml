@@ -1,0 +1,7 @@
+=link_to university, class: 'list-group-item' do
+  .media
+    -if university.logo?
+      .media-left=image_tag university.logo.url(:thumb), alt: university.name, class: 'media-object'
+    .media-body
+      %h4.media-heading
+        =university.name

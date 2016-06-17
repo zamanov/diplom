@@ -1,0 +1,70 @@
+ru:
+  app:
+    name: Информационная система
+  helpers:
+    sure: Вы уверены?
+    submit:
+      create: Сохранить
+      submit: Сохранить
+      update: Сохранить
+  activerecord:
+    models:
+      university: Университет
+      department: Структурное подразделение
+      university_info: Информация об университете
+      person: Персона
+      post: Должность
+      program: Направление
+    attributes:
+      university:
+        leaders: Руководство
+      university_info:
+        regdate: Дата основания
+        address: Адрес
+        site: Адрес официального сайта
+        email: Адрес электронной почты
+        telephone: Контактный телефон
+        worktime: Режим работы
+        founder_address: Адрес учредителя
+        founder_director: Руководитель учредителя
+        founder_email: Адрес электронной почты учредителя
+        founder_name: Учредитель
+        founder_phone: Контакный телефон учредителя
+        founder_site: Адрес официального сайта учредителя
+      department:
+        branches: Подчиненные подразделения
+        university: Университет
+        access_date: Дата обращения
+        posts: Сотрудники
+        head: Головное подразделение
+      document:
+        university: Университет
+        file: Ссылка на документ
+        program: Образовательная программа
+      program:
+        university: Университет
+        apprent: Срок обучения
+        date: Срок действия государственной аккредитации
+        form: Форма обучения
+        level: Уровень
+        documents: Документы
+      person:
+        posts: Занимаемые должности
+        phone: Контактный телефон
+        beginning_year: Год начала карьеры
+        degree: Ученая степень
+        rank: Ученое звание
+        email: Адрес электронной почты
+        upgrade: Повышение квалификации
+        subjects: Преподаваемые дисциплины
+      post:
+        university: Университет
+        person: Сотрудник
+
+  views:
+    pagination:
+      first: ⇤
+      last: ⇥
+      previous: ←
+      next: →
+      truncate: …

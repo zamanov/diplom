@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  file: 
+  code: MyString
+  fullname: MyText
+  university_id: 
+  date: 2016-05-28
+  type: 
+
+two:
+  file: 
+  code: MyString
+  fullname: MyText
+  university_id: 
+  date: 2016-05-28
+  type: 

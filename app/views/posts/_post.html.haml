@@ -1,0 +1,11 @@
+=link_to post, class: 'list-group-item' do
+
+  %b=post.name
+  %i
+    =post.person.to_fullname
+
+  %h5.media-heading
+    =post.placeable.name
+  %i
+    -if post.placeable_type != 'University'
+      =post.placeable.university.name

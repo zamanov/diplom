@@ -1,0 +1,44 @@
+%p#notice= notice
+%h1 Listing University Infos
+%table
+  %thead
+    %tr
+      %th Address
+      %th Fullname
+      %th Email
+      %th Regdate
+      %th Site
+      %th Telephone
+      %th Worktime
+      %th Founder address
+      %th Founder director
+      %th Founder email
+      %th Founder site
+      %th Founder phone
+      %th Founder name
+      %th Infodate
+      %th University
+      %th{:colspan => "3"}
+  %tbody
+    - @university_infos.each do |university_info|
+      %tr
+        %td= university_info.address
+        %td= university_info.fullname
+        %td= university_info.email
+        %td= university_info.regdate
+        %td= university_info.site
+        %td= university_info.telephone
+        %td= university_info.worktime
+        %td= university_info.founder_address
+        %td= university_info.founder_director
+        %td= university_info.founder_email
+        %td= university_info.founder_site
+        %td= university_info.founder_phone
+        %td= university_info.founder_name
+        %td= university_info.infodate
+        %td= university_info.university
+        %td= link_to 'Show', university_info
+        %td= link_to 'Edit', edit_university_info_path(university_info)
+        %td= link_to 'Destroy', university_info, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New University info', new_university_info_path

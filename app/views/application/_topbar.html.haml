@@ -1,0 +1,14 @@
+.navbar.navbar-default
+  .container
+    .navbar-header
+      =button_tag type: 'button', class: 'navbar-toggle collapsed', data: {toggle: 'collapse', target: '#navbar-collapse'} do
+        %span.sr-only Показать/скрыть меню
+        =fa_icon 'bars'
+      =link_to t('app.name'), root_path, class: 'navbar-brand'
+    #navbar-main.collapse.navbar-collapse
+      %ul.nav.navbar-nav
+        %li=link_to "Университеты", universities_path
+        %li=link_to "Департаменты", departments_path
+        %li=link_to "Документы", documents_path
+        %li=link_to "Программы", programs_path
+        %li=link_to "Персоны", people_path

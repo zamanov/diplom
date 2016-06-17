@@ -1,0 +1,71 @@
+= form_for(@university_info) do |f|
+  - if @university_info.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@university_info.errors.count, "error")
+        prohibited this university_info from being saved:
+      %ul
+        - @university_info.errors.full_messages.each do |message|
+          %li= message
+  .field
+    = f.label :address
+    %br/
+    = f.text_area :address
+  .field
+    = f.label :fullname
+    %br/
+    = f.text_area :fullname
+  .field
+    = f.label :email
+    %br/
+    = f.text_field :email
+  .field
+    = f.label :regdate
+    %br/
+    = f.date_select :regdate
+  .field
+    = f.label :site
+    %br/
+    = f.text_field :site
+  .field
+    = f.label :telephone
+    %br/
+    = f.text_field :telephone
+  .field
+    = f.label :worktime
+    %br/
+    = f.text_area :worktime
+  .field
+    = f.label :founder_address
+    %br/
+    = f.text_area :founder_address
+  .field
+    = f.label :founder_director
+    %br/
+    = f.text_field :founder_director
+  .field
+    = f.label :founder_email
+    %br/
+    = f.text_field :founder_email
+  .field
+    = f.label :founder_site
+    %br/
+    = f.text_field :founder_site
+  .field
+    = f.label :founder_phone
+    %br/
+    = f.text_field :founder_phone
+  .field
+    = f.label :founder_name
+    %br/
+    = f.text_area :founder_name
+  .field
+    = f.label :infodate
+    %br/
+    = f.datetime_select :infodate
+  .field
+    = f.label :university_id
+    %br/
+    = f.text_field :university_id
+  .actions
+    = f.submit

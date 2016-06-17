@@ -1,0 +1,49 @@
+%p#notice= notice
+%p
+  %strong Address:
+  = @university_info.address
+%p
+  %strong Fullname:
+  = @university_info.fullname
+%p
+  %strong Email:
+  = @university_info.email
+%p
+  %strong Regdate:
+  = @university_info.regdate
+%p
+  %strong Site:
+  = @university_info.site
+%p
+  %strong Telephone:
+  = @university_info.telephone
+%p
+  %strong Worktime:
+  = @university_info.worktime
+%p
+  %strong Founder address:
+  = @university_info.founder_address
+%p
+  %strong Founder director:
+  = @university_info.founder_director
+%p
+  %strong Founder email:
+  = @university_info.founder_email
+%p
+  %strong Founder site:
+  = @university_info.founder_site
+%p
+  %strong Founder phone:
+  = @university_info.founder_phone
+%p
+  %strong Founder name:
+  = @university_info.founder_name
+%p
+  %strong Infodate:
+  = @university_info.infodate
+%p
+  %strong University:
+  = @university_info.university
+= link_to 'Edit', edit_university_info_path(@university_info)
+|
+= link_to 'Back', university_infos_path

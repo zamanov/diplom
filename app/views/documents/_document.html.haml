@@ -1,0 +1,13 @@
+=link_to document, class: 'list-group-item' do
+  .media
+    %b=document.fullname
+  .media-body
+    %h5.media-heading
+      =document.university.name
+    %i
+      =document.info
+  %small.text-muted
+    Дата обращения:
+    =document.date.strftime("%d.%m.%Y")
+  -if document.program_id?
+    =document.program.name

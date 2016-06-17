@@ -1,0 +1,33 @@
+.page-header
+  %h1
+    =@person.to_fullname
+.row
+  .col-md-9
+    %dl
+      -if @person.degree
+        %dt=Person.human_attribute_name(:degree)
+        %dd=@person.degree
+      -if @person.rank
+        %dt=Person.human_attribute_name(:rank)
+        %dd=@person.rank
+      -if @person.beginning_year
+        %dt=Person.human_attribute_name(:beginning_year)
+        %dd=@person.beginning_year
+      -if @person.email
+        %dt=Person.human_attribute_name(:email)
+        %dd=@person.email
+      -if @person.phone
+        %dt=Person.human_attribute_name(:phone)
+        %dd=@person.phone
+      -if @person.upgrade
+        %dt=Person.human_attribute_name(:upgrade)
+        %dd=@person.upgrade
+
+    -if @person.posts.present?
+      %h3=Person.human_attribute_name(:posts)
+      =render @person.posts
+    -if @person.subjects.present?
+      %h3=Person.human_attribute_name(:subjects)
+      =render @person.subjects
+
+= link_to 'Назад', people_path

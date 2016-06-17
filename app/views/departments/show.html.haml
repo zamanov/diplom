@@ -1,0 +1,34 @@
+.page-header
+  %h3
+    =@department.name
+  %h3
+    %small=@department.info
+  %h6
+    %i=Department.human_attribute_name(:access_date)
+    %i=@department.access_date.strftime("%d.%m.%Y")
+.row
+  .col-md-9
+    %dl
+      -if @department.university
+        %dt=Department.human_attribute_name(:university)
+        %dd=link_to @department.university.name,@department.university
+      -if @department.address
+        %dt=Department.human_attribute_name(:address)
+        %dd=@department.address
+      -if @department.email
+        %dt=Department.human_attribute_name(:email)
+        %dd=@department.email
+      -if @department.site
+        %dt=Department.human_attribute_name(:site)
+        %dd=@department.site
+    -if @department.head
+      %h3=Department.human_attribute_name(:head)
+      =render @department.head
+    -if @department.branches.present?
+      %h3=Department.human_attribute_name(:branches)
+      =render @department.branches
+    -if @department.posts.present?
+      %h3=Department.human_attribute_name(:posts)
+      =render @department.posts
+
+= link_to 'Назад', departments_path

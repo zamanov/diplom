@@ -1,0 +1,31 @@
+.page-header
+  %h1
+    =@program.code
+    =@program.name
+  %h3
+    %small=@program.profile
+.row
+  .col-md-9
+    %dl
+      -if @program.university
+        %dt=Program.human_attribute_name(:university)
+        %dd=link_to "#{@program.university.name}", @program.university
+      -if @program.apprent
+        %dt=Program.human_attribute_name(:apprent)
+        %dd=@program.apprent
+      -if @program.form
+        %dt=Program.human_attribute_name(:form)
+        %dd=@program.form
+      -if @program.level
+        %dt=Program.human_attribute_name(:level)
+        %dd=@program.level
+      -if @program.date
+        %dt=Program.human_attribute_name(:date)
+        %dd=@program.date
+      -if @program.documents
+        %h3=Program.human_attribute_name(:documents)
+        =render @program.documents
+
+
+
+= link_to 'Назад', programs_path

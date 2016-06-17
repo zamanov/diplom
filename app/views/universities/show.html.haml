@@ -1,0 +1,107 @@
+%script{:src => "//api-maps.yandex.ru/2.1/?lang=ru_RU", :type => "text/javascript"}
+:javascript
+  ymaps.ready(init);
+  function init(){
+    var myGeocoder = ymaps.geocode(document.getElementById("ymap").getAttribute("data-address"));
+    myGeocoder.then(
+    function (res) {
+        var coord = res.geoObjects.get(0).geometry.getCoordinates()
+        myMap = new ymaps.Map("map", {
+            center: coord,
+            zoom: 15
+        });
+        myPlacemark = new ymaps.Placemark(coord);
+        myMap.geoObjects.add(myPlacemark);
+    }
+    );
+  }
+.page-header
+  .row
+    .col-md-2
+      -if @university.logo?
+        =image_tag @university.logo.url(:medium), alt: @university.logo, class: 'img-responsive'
+    .col-md-10
+      %h1#university_name
+        =@university.name
+      %h3
+        %small=@university_info.fullname
+.row
+  .col-md-6
+    %dl
+      -if @university_info.regdate
+        %dt=UniversityInfo.human_attribute_name(:regdate)
+        %dd
+          %i.fa.fa-calendar
+          =@university_info.regdate
+      -if @university_info.address
+        %dt=UniversityInfo.human_attribute_name(:address)
+        %dd
+          %i.fa.fa-map
+          =@university_info.address
+      -if @university_info.site
+        %dt=UniversityInfo.human_attribute_name(:site)
+        %dd
+          %i.fa.fa-chrome
+          =link_to @university_info.site, @university_info.site
+      -if @university_info.email
+        %dt=UniversityInfo.human_attribute_name(:email)
+        %dd
+          %i.fa.fa-envelope
+          =link_to @university_info.email, "mailto://#{@university_info.email}"
+      -if @university_info.telephone
+        %dt=UniversityInfo.human_attribute_name(:telephone)
+        %dd
+          %i.fa.fa-phone.fa-fw
+          =link_to @university_info.telephone, "tel:#{@university_info.telephone}"
+      -if @university_info.worktime
+        %dt=UniversityInfo.human_attribute_name(:worktime)
+        %dd=@university_info.worktime
+
+
+    %dl
+      -if @university_info.founder_name
+        %dt=UniversityInfo.human_attribute_name(:founder_name)
+        %dd=@university_info.founder_name
+      -if @university_info.founder_director
+        %dt=UniversityInfo.human_attribute_name(:founder_director)
+        %dd=@university_info.founder_director
+      -if @university_info.founder_address
+        %dt=UniversityInfo.human_attribute_name(:founder_address)
+        %dd
+          %i.fa.fa-map
+          =@university_info.founder_address
+      -if @university_info.founder_site
+        %dt=UniversityInfo.human_attribute_name(:founder_site)
+        %dd
+          %i.fa.fa-chrome
+          =link_to @university_info.founder_site, @university_info.founder_site
+      -if @university_info.founder_email
+        %dt=UniversityInfo.human_attribute_name(:founder_email)
+        %dd
+          %i.fa.fa-envelope
+          =link_to @university_info.founder_email, "mailto://#{@university_info.founder_email}"
+      -if @university_info.founder_phone
+        %dt=UniversityInfo.human_attribute_name(:founder_phone)
+        %dd
+          %i.fa.fa-phone.fa-fw
+          =link_to @university_info.founder_phone, "tel:#{@university_info.founder_phone}"
+
+  .col-md-6
+    #ymap{data:{address: @university_info.address}}
+    #map{:style => "width: 500px; height: 400px"}
+.row
+  .col-md-9
+    %h3=University.human_attribute_name(:leaders)
+    =render @leaders
+.row
+  .col-md-12
+    %h3 Ссылки
+    =link_to departments_path(:university => @university), class: 'list-group-item' do
+      = "Структурные подразделения #{@university.name}"
+    =link_to programs_path(:university => @university), class: 'list-group-item' do
+      = "Образовательные программы #{@university.name}"
+    =link_to documents_path(:university => @university), class: 'list-group-item' do
+      = "Документы #{@university.name}"
+    =link_to posts_path(:university => @university, :is_manage => false), class: 'list-group-item' do
+      = "Преподаватели #{@university.name}"
+= link_to 'Назад', universities_path

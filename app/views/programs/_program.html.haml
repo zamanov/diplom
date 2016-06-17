@@ -1,0 +1,11 @@
+=link_to program, class: 'list-group-item' do
+  .media
+    %b=program.name
+    %i=program.code
+  %small=program.profile
+  .media-body
+    %h5.media-heading
+      =program.university.name
+    %i
+      -if program.level
+        =program.level

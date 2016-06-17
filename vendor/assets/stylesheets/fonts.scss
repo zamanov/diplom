@@ -1,0 +1,31 @@
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Lato Light'), local('Lato-Light'), asset-url('LatoLight.eot') format('eot'),
+  asset-url('LatoLight.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato'), local('Lato'), asset-url('LatoRegular.eot') format('eot'),
+  asset-url('LatoRegular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Lato Bold'), local('Lato-Bold'), asset-url('LatoBold.eot') format('eot'),
+  asset-url('LatoBold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Lato Italic'), local('Lato-Italic'), asset-url('LatoItalic.eot') format('eot'),
+  asset-url('LatoItalic.woff') format('woff');
+}

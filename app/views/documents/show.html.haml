@@ -1,0 +1,18 @@
+.page-header
+  %h1
+    =@document.fullname
+  %h3
+    %small=@document.info
+.row
+  .col-md-9
+    %dl
+      -if @document.university
+        %dt=Document.human_attribute_name(:university)
+        %dd=link_to @document.university.name,@document.university
+      %dt=Document.human_attribute_name(:file)
+      %dd= link_to "Скачать (#{number_to_human_size(@document.file_file_size)})", download_path(@document.id)
+    -if @document.program
+      %h3=Document.human_attribute_name(:program)
+      =render @document.program
+
+= link_to 'Назад', documents_path

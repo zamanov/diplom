@@ -1,0 +1,19 @@
+.page-header
+  %h1
+    =@post.name
+.row
+  .col-md-9
+    %dl
+      -if @post.placeable_type == 'University'
+        %dt=Post.human_attribute_name(:university)
+        %dd=link_to @post.placeable.name,@post.placeable
+      -else
+        %dt=Post.human_attribute_name(:university)
+        %dd=link_to @post.placeable.university.name,@post.placeable.university
+        %dt=Post.human_attribute_name(:department)
+        %dd=link_to @post.placeable.name,@post.placeable
+      -if @post.person
+        %dt=Post.human_attribute_name(:person)
+        %dd=link_to @post.person.to_fullname,@post.person
+
+= link_to 'Назад', posts_path
